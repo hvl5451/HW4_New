@@ -30,6 +30,7 @@ class Customer(Person):
                  password = None, customer_number = None):
 
         self.___password = password
+        self._customer_number = random.randint(1000000000,10000000000)
         self.__customer_account_list = {}
 
         super().__init__(name, birthdate, phone_number)
@@ -57,7 +58,7 @@ class Customer(Person):
 
 
     def set_password(self, oldpass, newpass):
-
+        """setter method for password; changes private attribute password to argument passed to it"""
         self._password = newpass
 
 
