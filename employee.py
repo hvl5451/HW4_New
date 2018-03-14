@@ -1,6 +1,6 @@
 from person import Person
 from random import randint
-
+from customer import Customer
 class Employee(Person):
     eid_list=[] #getter method should be added to the bank
     def __init__(self, name, birthdate, phone_no, password):
@@ -17,20 +17,12 @@ class Employee(Person):
     def get_eid(self):
         return self._eid
 
-    def display_customer_details(self, obj):
+    def display_customer_details(self, c):
         'display customer details, return getter functions of customer'
+        return "Name: {}".format(c.get_name())
 
-    def edit_customer_details(self, obj):
+    def edit_customer_details(self, c):
         raise NotImplementedError("Can be accessed by only Manager")
 
-    def remove_customer(self, obj):
+    def remove_customer(self, c):
         raise NotImplementedError("Can be accessed by only Manager")
-
-
-
-
-
-
-
-
-

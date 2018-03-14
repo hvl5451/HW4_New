@@ -34,7 +34,7 @@ class Bank:
             __noonopen = "PM"
         if self.__bank_closehours[day].hour > 12:
             __noonclose = "PM"
-            
+
         return "{}:{}{} to {}:{}{}".format(self.__bank_openhours[day].hour%12,\
                                            str((self.__bank_openhours[day].minute)%12).zfill(2), \
                                            __noonopen, \
@@ -45,7 +45,7 @@ class Bank:
     def hoursopen(self):
         print("""
             {} Hours:
-            
+
             monday: {}
             tuesday: {}
             wednesday: {}
@@ -66,7 +66,7 @@ class Bank:
 
     def change_timeopen(self, day):
         return 0
-        
+
 
     def isopen(self):
         __today = datetime.datetime.now()
@@ -80,10 +80,3 @@ class Bank:
             print("{} is currently closed".format(self.__bank_name))
         else:
             print("{} is currently open.".format(self.__bank_name))
-
-
-
-
-
-    
-                                                                                            
