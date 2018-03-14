@@ -18,7 +18,7 @@ class Bank:
     By containing employees and customers, it also contains their attributes and account objects
     Can print the open hours as well as tell if the bank is open based on current time
     """
-    
+
 
     def __init__(self, bank_name):
         self.__bank_name = bank_name
@@ -40,30 +40,30 @@ class Bank:
 
         self.__customer_list = {}
         self.__employee_list = {}
-        
-    
+
+
     def get_bankname(self):
         """
         getter method for bank_name
         returns the private attribute bank_name
         """
         return self.__bank_name
-    
+
     def get_customer_list(self):
         """
         getter method for customer_list
         returns the private attribute customer_list
         """
         return self.__customer_list
-    
+
     def get_employee_list(self):
         """
         getter method for employee_list
         returns the private attribute customer_list
         """
         return self.__employee_list
-    
-    
+
+
     def timeopen(self, day):
         """
         method that supplements the gethours method
@@ -89,7 +89,7 @@ class Bank:
     def get_hoursopen(self):
         """
         method that prints timeopen values for every day in an organized way
-        
+
         """
         print("""
             {} Hours:
@@ -167,4 +167,3 @@ class Bank:
             print("{} is currently closed".format(self.__bank_name))
         else:
             print("{} is currently open.".format(self.__bank_name))
-      

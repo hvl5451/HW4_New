@@ -31,7 +31,7 @@ class Customer(Person):
 
         super().__init__(name, birthdate, phone_number)
         self._customer_number = random.randint(1000000000,10000000000)
-        self.__customer_account_list = {}
+        self._customer_account_list = {}
 
         print("account number is {}".format(self._customer_number))
 
@@ -52,6 +52,9 @@ class Customer(Person):
         """
         return self._phone
 
+    def set_phone_number(self, phone_number):
+        self._phone_no = phone_number
+
     def set_name(self, newname):
         """
         setter method for name
@@ -63,7 +66,6 @@ class Customer(Person):
         self._customer_number = random.randint(1000000000,10000000000)
         self._customer_account_list = {}
 
-        super().__init__(name, birthdate, phone_number)
 
     def create_account(self, account_type):
 
@@ -88,7 +90,6 @@ class Customer(Person):
             print ("account # is {}".format(new_account.get_account_number()))
 
         self._customer_account_list[new_account.get_account_number()] = new_account
-        #self._customer_account_list[new_account.get_account_number()] = new_account
 
 
         print("account number is {}".format(new_account.get_account_number()))

@@ -27,13 +27,9 @@ class Manager(Employee):
         """calls the set_name() function from Customer to edit customer name"""
         c.set_name(name)
 
-    def edit_customer_birthdate(self, c, birthdate):
-        """calls the set_birthdate() from Customer to edit Customer birthdate"""
-        c.set_birthdate(birthdate)
-
     def edit_phone_no(self, c, phone_no):
         """calls the set_phone_no() from Customer to edit Customer Phone number"""
-        c.set_phone_no(phone_no)
+        c.set_phone_number(phone_no)
 
     def create_account_for_customer(self, c, account_type):
         """creates a new account for customer"""
@@ -45,7 +41,7 @@ class Manager(Employee):
             new_account = CheckingAccount(c.get_name(),datetime.date.today().ctime(),\
             account_num, account_type)
 
-        c.add_account(new_account)
+        c.create_account(account_type)
 
     def remove_account_for_customer(self, c, account_number):
         """deletes a customer's account"""
