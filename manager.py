@@ -7,8 +7,8 @@ from savings_account import SavingsAccount
 from checking_account import CheckingAccount
 from random import randint
 class Manager(Employee):
-    def __init__(self, name, birthdate, phone_no, password):
-        super().__init__(name, birthdate, phone_no, password)
+    def __init__(self, name, birthdate, phone_no):
+        super().__init__(name, birthdate, phone_no)
 
     def edit_customer_name(self, c, name):
         c.set_name(name)

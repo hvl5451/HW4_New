@@ -3,9 +3,8 @@ from random import randint
 from customer import Customer
 class Employee(Person):
     eid_list=[] #getter method should be added to the bank
-    def __init__(self, name, birthdate, phone_no, password):
+    def __init__(self, name, birthdate, phone_no):
         super().__init__(name, birthdate, phone_no)
-        self.__password=password
         self._eid=randint(10000, 99999)
         Employee.eid_list.append(self._eid)
         print("Welcome {}, your ID is:{}".format(self._name, self._eid))
