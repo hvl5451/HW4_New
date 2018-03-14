@@ -1,84 +1,43 @@
-"""
-account.py documentation
+***
+Manager.txt Documentation
 
-This module contains the definition for the Account class. The class emulates a
-real-life bank account, with attributes and functions that store information about
-the account and its holder, as well as withdrawal and deposit functionalities.
+This module contains the definition for the Manager class. This class has attributes and functions that stores the information about Manager and gives the access to edit, create and delete customer details. This class in inherited from Employee.
 
-Example:
->>>from account import Account
->>>from random import randint
->>>new_account = Account("John Doe", "01/01/17", "John Doe Savings 001", randint(1, 1000000))
->>>new_account.get_holder()
->>>John Doe
-"""
-"""
+Examples:
+>>>M1=Manager("Bheas", "09/08/1231,"1212123534")
+>>>M1.edit_customer_name(C1, "Fjui")
+>>>M1.edit_phone_no(C1, "912,)
+>>>M1.create_account_for_customer(C2, CheckingAccount)
+>>>M1.remove_customer(C3)
+
+
+Class Manager(Employee)
+
+	Implementation of a Manager
+
 Attributes:
-    None
+		None
 
-Todo:
-    None
+	Methods:
+		def edit_customer_name(self, c, phone_no):
+			Args: 
+				c: A customer object
+				name: The new name of the customer that should be replaced
+ 
 
-"""
-"""
-class (object):
-    """
-    Implementation of a conventional bank account.
+		def edit_phone_no(self, c, phone_no):
+			Args:
+				c: A customer object
+				phone_no: The new phone_no of the customer that must be replaced
 
-    Attributes:
-        _holder (str): the holder of the account.
+		def create_account_for_customer(self, c, account_type):
+			Args:
+				c: A customer object
+				account_type: The type of the account, i.e, savings and checking.
 
-        _created_on(str):String representation of the account's creation date.
-
-        _account_name (str):
-
-        _account_number (int): the unique numerical identifier of the bank account.
-
-        _account_type (str): A string denoting the type of the account
-        (for this implementation, either savings or checking)
-
-        _balance (double): The balance of the bank account.
-
-    """
-
-    def __init__(self, holder, created_on, account_name, account_number, account_type, balance=0.0):
-
-        Args:
-            holder (str): the value to be assigned to _holder
-            created_on (str): the value to be assigned to _created_on
-            account_name(str): the value to be assigned to _account_name
-            balance (double): the value to be assigned to _balance - by default,
-            this value is set to 0.0.
-        """
+		def remove_account_for_customer(self, c, account_number )
+			Args:
+				c: A customer object
+				account_number: The account_number of the customer that      needs to be removed
 
 
-    def get_holder(self):
-      Args:
-          None
-
-    def get_created_on(self):
-      Args:
-          None
-
-    def get_account_name(self):
-      Args:
-          None
-
-
-    def get_account_number(self):
-      Args:
-          None
-
-    def get_account_type(self):
-      Args:
-          None
-
-    def get_balance(self):
-      Args:
-          None
-
-    def update_balance(self, amount):
-      Args:
-          amount (double): the amount to be added/deducted from the account balance;
-          Can take on a positive or a negative value
-"""
