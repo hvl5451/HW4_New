@@ -1,7 +1,7 @@
 """
 bank objects are created independently from the other classes, and are
 designed to be a container for the other classes, i.e. by storing instance
-variables of custoemr and employee in dictionaries. Bank objects also contain
+variables of customer and employee in dictionaries. Bank objects also contain
 the bank name and bank hours, which can be modified using methods.
 """
 
@@ -113,25 +113,49 @@ class Bank:
 
 
     def change_timeopen(self, day, timeopen, timeclose):
+        """
+        setter method for the timeopen and timeclose values for a given day
+        accepts a day (int from 0 to 6) and datetime.time objects
+        both are in the same method because it makes more sense semantically
+        to set a range for hours open
+        """
         self.__bank_openhours[day] = timeopen
         self.__bank_closehours[day] = timeclose
 
 
     def add_customer(self, customer_obj):
+        """
+        method for adding a customer object to the dictionary customer_list
+        the key generated is the customer_number attribute of the customer object
+        """
         self.__customer_list["{}".format(customer_obj.get_customer_number()] = customer_obj
 
     def remove_customer(self, customer_obj):
+        """
+        deletes the selected customer_obj from the customer_list dictionary
+        """
         del self.__customer_list["{}".format(customer_obj.get_customer_number())]
 
 
     def add_employee(self, employee_obj):
+        """
+        method for adding an employee object to the dictionary employee_list
+        the key generated is the eid attribute of the employee object
+        """
         self.__employee_list["{}":.format(employee_obj.get_eid())] = employee_obj
 
     def remove_employee(self, employee_obj):
+        """
+        deletes the selected employee_obj from the employee_lsit dictionary
+        """
         del self.__employee_list["{}":.format(employee_obj.get_eid())]
 
 
     def isopen(self):
+        """
+        method that displays a message saying whether the bank is open or not
+        based on the current time and the bank_openhours and bank_closehours dictionaries
+        """
         __today = datetime.datetime.now()
         __weekdaytoday = datetime.datetime.weekday(__today)
         __currenttime = datetime.time(datetime.datetime.now().hour, datetime.datetime.now().minute)
