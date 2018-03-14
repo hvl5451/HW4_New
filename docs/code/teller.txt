@@ -1,15 +1,15 @@
 """
-account.txt documentation
+teller.py documentation
 
-This module contains the definition for the Account class. The class emulates a
-real-life bank account, with attributes and functions that store information about
-the account and its holder, as well as withdrawal and deposit functionalities.
+This module contains the definition for the Teller class. The class emulates a
+real-life bank teller, with attributes and functions that store information about
+the Teller and its functions.
 
 Example:
->>>from account import Account
+>>>from teller import Teller
 >>>from random import randint
->>>new_account = Account("John Doe", "01/01/17", "John Doe Savings 001", randint(1, 1000000))
->>>new_account.get_holder()
+>>>new_teller = Teller("John Doe", "01/01/17", "215-215-2153", randint.random(1, 10000000))
+>>>new_teller.get_name()
 >>>John Doe
 """
 """
@@ -21,64 +21,37 @@ Todo:
 
 """
 """
-class (object):
+class Teller(Employee):
     """
-    Implementation of a conventional bank account.
+    Implementation of a conventional bank teller.
 
     Attributes:
-        _holder (str): the holder of the account.
-
-        _created_on(str):String representation of the account's creation date.
-
-        _account_name (str):
-
-        _account_number (int): the unique numerical identifier of the bank account.
-
-        _account_type (str): A string denoting the type of the account
-        (for this implementation, either savings or checking)
-
-        _balance (double): The balance of the bank account.
 
     """
 
-    def __init__(self, holder, created_on, account_name, account_number, account_type, balance=0.0):
+    def __init__(self, name, birthdate, phone_no, eid):
 
         Args:
-            holder (str): the value to be assigned to _holder
-            created_on (str): the value to be assigned to _created_on
-            account_name(str): the value to be assigned to _account_name
-            balance (double): the value to be assigned to _balance - by default,
+            name (str): the value to be assigned to _name
+            birthdate (str): the value to be assigned to _birthdate
+            eid (int): the value to be assigned to _eid
+            phone_no (str): the value to be assigned to _phone_no,
             this value is set to 0.0.
         """
 
 
-    def get_holder(self):
+    def get_name(self):
       Args:
           None
 
-    def get_created_on(self):
+    def get_birthdate(self):
       Args:
           None
 
-    def get_account_name(self):
+    def get_phone_no(self):
       Args:
           None
-
-
-    def get_account_number(self):
+    def get_eid(self):
       Args:
           None
-
-    def get_account_type(self):
-      Args:
-          None
-
-    def get_balance(self):
-      Args:
-          None
-
-    def update_balance(self, amount):
-      Args:
-          amount (double): the amount to be added/deducted from the account balance;
-          Can take on a positive or a negative value
 """

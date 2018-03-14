@@ -1,5 +1,5 @@
 """
-bank.txt documentation
+bank.py documentation
 
 This module contains the definition for the Bank class. The class emulates a
 real-life bank system, with attributes and functions that store information about

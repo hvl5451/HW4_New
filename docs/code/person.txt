@@ -1,5 +1,5 @@
 """
-account.txt documentation
+.txt documentation
 
 This module contains the definition for the Account class. The class emulates a
 real-life bank account, with attributes and functions that store information about

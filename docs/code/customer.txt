@@ -1,5 +1,5 @@
 """
-customer.txt documentation
+customer.py documentation
 
 This module contains the definition for the Customer class. The class emulates a
 real-life bank customer, with attributes and functions that store information about

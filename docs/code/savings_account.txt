@@ -1,14 +1,14 @@
 """
-account.txt documentation
+savings_account.txt documentation
 
-This module contains the definition for the Account class. The class emulates a
-real-life bank account, with attributes and functions that store information about
+This module contains the definition for the SavingsAccount class. The class emulates a
+real-life bank savings account, with attributes and functions that store information about
 the account and its holder, as well as withdrawal and deposit functionalities.
 
 Example:
->>>from account import Account
+>>>from savings_account import SavingsAccount
 >>>from random import randint
->>>new_account = Account("John Doe", "01/01/17", "John Doe Savings 001", randint(1, 1000000))
+>>>new_account = SavingsAccount("John Doe", "01/01/17", "John Doe Savings 001", randint(1, 1000000))
 >>>new_account.get_holder()
 >>>John Doe
 """
@@ -23,21 +23,10 @@ Todo:
 """
 class (object):
     """
-    Implementation of a conventional bank account.
+    Implementation of a conventional bank savings account.
 
     Attributes:
-        _holder (str): the holder of the account.
-
-        _created_on(str):String representation of the account's creation date.
-
-        _account_name (str):
-
-        _account_number (int): the unique numerical identifier of the bank account.
-
-        _account_type (str): A string denoting the type of the account
-        (for this implementation, either savings or checking)
-
-        _balance (double): The balance of the bank account.
+        
 
     """
 

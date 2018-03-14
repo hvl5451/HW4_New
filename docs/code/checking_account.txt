@@ -1,5 +1,5 @@
 """
-checking_account.txt documentation
+checking_account.py documentation
 
 This module contains the definition for the CheckingAccount class. The class emulates a
 real-life checking account, with attributes and functions that store information about
