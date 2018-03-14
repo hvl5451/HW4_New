@@ -27,38 +27,19 @@ class Customer(Person):
     """
     
     def __init__(self, name, birthdate, phone_number, \
-                 password = None, customer_number = None):
+                 password, customer_number):
         
         self.___password = password
+        self._customer_number = random.randint(1000000000,10000000000)
         self.__customer_account_list = {}
         
         super().__init__(name, birthdate, phone_number)
 
-    """
-    
-    Login property that can be true and false for each instance of customer depending if
-    they login with their user account number and password. When this property is false,
-    certain methods are disabled
 
-    """
-
-
-    def create_usraccount(self, password, birthdate):
         
-        if birthdate != self._birthdate:
-            raise ValueError("birthdates do not match. Security verification failed")
-        
-        else:
-            self.___password = password
-            self._customer_number = random.randint(1000000000,10000000000)
-            print("account number is {}".format(self._customer_number))
-
-
-            
-        
-    def set_password(self, oldpass, newpass):
-        
-        self._password = newpass
+    def set_password(self, newpass):
+        """setter method for password; changes private attribute password to argument passed to it"""
+        self.__password = newpass
 
 
     def get_name(self):
