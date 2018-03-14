@@ -1,32 +1,23 @@
 """
-account.txt documentation
+customer.txt documentation
 
-This module contains the definition for the Account class. The class emulates a
-real-life bank account, with attributes and functions that store information about
-the account and its holder, as well as withdrawal and deposit functionalities.
-
+This module contains the definition for the Customer class. The class emulates a
+real-life bank customer, with attributes and functions that store information about
+the customer and its functions.
 Example:
->>>from account import Account
+>>>from customer import Customer
 >>>from random import randint
->>>new_account = Account("John Doe", "01/01/17", "John Doe Savings 001", randint(1, 1000000))
->>>new_account.get_holder()
+>>>new_cust = Account("John Doe", "01/01/17", "215-215-2152")
+>>>new_cust.get_name()
 >>>John Doe
 """
 """
-Attributes:
-    None
-
-Todo:
-    None
-
-"""
-"""
-class (object):
+class Customer(Person):
     """
-    Implementation of a conventional bank account.
+    Implementation of a bank customer.
 
     Attributes:
-        _holder (str): the holder of the account.
+        _name (str): the holder of the account.
 
         _created_on(str):String representation of the account's creation date.
 
