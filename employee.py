@@ -9,17 +9,15 @@ class Employee(Person):
         self._eid=randint(10000, 99999)
         Employee.eid_list.append(self._eid)
         print("Welcome {}, your ID is:{}".format(self._name, self._eid))
-
-    @classmethod
-    def list_getter(cls):
-        return Employee.emp_list
-
+        
     def get_eid(self):
         return self._eid
-
+    
     def display_customer_details(self, c):
-        'display customer details, return getter functions of customer'
-        return "Name: {}".format(c.get_name())
+        return "Name:{}".format(c._name)
+        return "Phone Number:{}".format(c.phone_no())
+        return "Account no:{}".format(c.get_customer_no())
+        return "Balance:{}".format(c.get_balance()))
 
     def edit_customer_details(self, c):
         raise NotImplementedError("Can be accessed by only Manager")
