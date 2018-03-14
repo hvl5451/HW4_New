@@ -20,9 +20,20 @@ class Bank:
                                4: datetime.time(16,30), \
                                5: datetime.time(16,30), \
                                6: datetime.time(13,0)}
-        self.__employee_count = 0
-        self.__customer_count = 0
-        self.__customer_list = []
+
+        self.__customer_list = {}
+        self.__employee_list = {}
+
+
+    def get_bankname(self):
+        return self.__bank_name
+
+    def get_customer_list(self):
+        return self.__customer_list
+
+    def get_employee_list(self):
+        return self.__employee_list
+
 
     def timeopen(self, day):
         __noonopen="AM"
@@ -41,7 +52,7 @@ class Bank:
                                            str((self.__bank_closehours[day].minute)%12).zfill(2), \
                                            __noonclose)
 
-    def hoursopen(self):
+    def get_hoursopen(self):
         print("""
             {} Hours:
 
@@ -63,8 +74,9 @@ class Bank:
                        self.timeopen(0)))
 
 
-    def change_timeopen(self, day):
-        return 0
+    def change_timeopen(self, day, timeopen, timeclose):
+        self.__bank_openhours[day] = timeopen
+        self.__bank_closehours[day] = timeclose
 
 
     def isopen(self):
@@ -79,9 +91,3 @@ class Bank:
             print("{} is currently closed".format(self.__bank_name))
         else:
             print("{} is currently open.".format(self.__bank_name))
-
-    def num_of_employees(self):
-        return len(Employee.eid_list)
-
-    def employee_details(self):
-        return Employee.eid_list
