@@ -10,7 +10,6 @@ deposit, withdraw, and check balance.
 from person import Person
 from checking_account import CheckingAccount
 from savings_account import SavingsAccount
-import threading
 import random
 import datetime
 
@@ -66,6 +65,7 @@ class Customer(Person):
 
 
     def create_account(self, account_type):
+        
         """
         method for creating bank account objects
         constructs instances of the Account subclasses with customer attributes:
@@ -95,19 +95,40 @@ class Customer(Person):
             
 
     def check_balance(self, account_number):
+        """
+        getter method for balance
+        returns the balance attribute of the specific account object from the dictionary
+        of the customer's accounts
+        """
+
         return self._customer_account_list[account_number].get_balance()
 
     def withdraw(self, account_number, amount):
+        """
+        method for simulating withdrawing money
+        will reduce the targeted account's balance based on the amount given in the argument
+        uses the Account update_balance method which modifies the balance
+        """
+        
         self._customer_account_list[account_number].update_balance(amount*-1)
         print(" withdrew ${}", amount)
 
 
     def deposit(self, account_number, amount):
+        """
+        method for simulating withdrawing money
+        will reduce the targeted account's balance based on the amount give nin the argument
+        uses the Account update_balance method which modifiies the balance
+        """
+        
         self._customer_account_list[account_number].update_balance(amount)
         print(" withdrew ${}", amount)        
         
         
     def __str__(self):
+        """
+        overwriting the str method; will show the name nad customer number if customer object is printed or represented
+        """
         return "{},{}".format(self._name, self._customer_number)
 
     __repr__=__str__
