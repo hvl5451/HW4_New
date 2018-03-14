@@ -1,9 +1,8 @@
 """
 
 Customer objects are created with attributes from Person, and have the option to create user accounts
-and login to access more methods, such as change password, request account open, request account close,
-deposit, withdraw, check balance, etc. Customers cannot open or close accounts by themselves, but have
-methods to request these actions which should be approved by the manager.
+and login to access more methods, such as change password, open account
+deposit, withdraw, and check balance.
 
 """
 
@@ -12,6 +11,7 @@ from person import Person
 from account import Account
 import threading
 import random
+import datetime
 
 class Customer(Person):
 
@@ -26,11 +26,11 @@ class Customer(Person):
     """
     
     def __init__(self, name, birthdate, phone_number, \
-                 password = None, customer_number = None, Login = False):
+                 password = None, customer_number = None):
         self.__password = password
-        self._Login = Login
+        self.__customer_account_list = {}
         
-        super().__init__(name, gender, birthdate, phone_number)
+        super().__init__(name, birthdate, phone_number)
 
     """
     
@@ -40,19 +40,6 @@ class Customer(Person):
 
     """
 
-    @property
-    def Login(self):
-        
-        """getter method for Login property"""
-        
-        return self._Login
-
-    @Login.setter
-    def Login(self,value):
-        
-        """ setter method for Login property """
-        
-        self._Login = value
 
     def create_usraccount(self, password, birthdate):
         if birthdate != self.birthdate:
@@ -62,31 +49,45 @@ class Customer(Person):
             self.customer_number = random.randint(1000000000,10000000000)
             print("account number is {}".format(self.customer_number))
 
-    def login(self, act_num, temp_pass):
-        if temp_pass != self.__password or act_num != self.customer_number:
-            raise Exception("invalid password or account number")
-        else:
-            self._Login = True
-            threading.Timer(900.0, self.logout).start()
-            print("logged in")
 
-    def logout(self):
-        self.Login = False
-        print("logged out")
             
         
-    def change_password(self, oldpass, newpass):
-        if self.Login == False:
-            raise Exception("not logged in")
-        elif oldpass != self.__password:
-            raise ValueError("previous password invalid")
-        else:
-            self.__password = newpass
+    def set_password(self, oldpass, newpass):
+        self.__password = newpass
+
+
+    def set_name(self, temppass, newname):
+        self.name = newname
+
+
+    def set_phone_number(self, temppass, new_phone_number):
+        self.phone_number = new_phone_number
+
+
+    def create_account(self, account_type):
+        new_account = Account (self.name, str(datetime.datetime.now()), random.randint(1000000,10000000), account_type)
+        self.__customer_account_list[new_account.get_account_number()] = new_account
+        self.__customer_account_list[new_account.get_account_number()] = new_account
+        print("account number is {}".format(new_account.get_account_number()))
+        return new_account.get_account_number()
+            
+
+    def check_balance(self, account_number):
+        return self.__customer_account_list[account_number].get_balance()
+
+    def withdraw(self, account_number, amount):
+        self.__customer_account_list[account_number].update_balance(amount*-1)
+        print(" withdrew ${}", amount)
+
+
+    def deposit(self, account_number, amount):
+        self.__customer_account_list[account_number].update_balance(amount)
+        print(" withdrew ${}", amount)        
+        
         
     def __str__(self):
-        return "{},{}".format(self.name, self.customer_number)
+        return "{},{}".format(self.name, self.__customer_number)
 
     __repr__=__str__
     
-    def create_bankaccount(self):
-        return 0
+    
