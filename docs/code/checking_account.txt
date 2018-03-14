@@ -1,0 +1,28 @@
+"""
+checking_account.txt documentation
+
+This module contains the definition for the CheckingAccount class. The class emulates a
+real-life checking account, with attributes and functions that store information about
+the account and its holder (inherited from the Account class), as well as withdrawal and deposit functionalities.
+
+Example:
+>>>from checking_account import CheckingAccount
+>>>from random import randint
+>>>checking = CheckingAccount("John Doe", "01/01/2017", randint.random(1, 10000000), "Savings")
+>>>checking.get_balance()
+>>>0.0
+"""
+
+class CheckingAccount(Account):
+    """
+    Implementation of a checking account. All attributes
+    are inherited from Account.
+
+    Attributes:
+            None
+
+
+
+    def charge_interest(self):
+      Args:
+          None

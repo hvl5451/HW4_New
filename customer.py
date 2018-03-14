@@ -16,7 +16,7 @@ import datetime
 class Customer(Person):
 
     """
-    
+
     Implementation of a customer.
     Can create a user_account within the bank system.
     Can login, logout, and change password.
@@ -24,16 +24,16 @@ class Customer(Person):
     Can withdraw and deposit money, check balance of the customer's different accounts.
 
     """
-    
+
     def __init__(self, name, birthdate, phone_number, \
                  password = None, customer_number = None):
         self.__password = password
         self.__customer_account_list = {}
-        
+
         super().__init__(name, birthdate, phone_number)
 
     """
-    
+
     Login property that can be true and false for each instance of customer depending if
     they login with their user account number and password. When this property is false,
     certain methods are disabled
@@ -50,8 +50,8 @@ class Customer(Person):
             print("account number is {}".format(self.customer_number))
 
 
-            
-        
+
+
     def set_password(self, oldpass, newpass):
         self.__password = newpass
 
@@ -70,7 +70,7 @@ class Customer(Person):
         self.__customer_account_list[new_account.get_account_number()] = new_account
         print("account number is {}".format(new_account.get_account_number()))
         return new_account.get_account_number()
-            
+
 
     def check_balance(self, account_number):
         return self.__customer_account_list[account_number].get_balance()
@@ -82,12 +82,10 @@ class Customer(Person):
 
     def deposit(self, account_number, amount):
         self.__customer_account_list[account_number].update_balance(amount)
-        print(" withdrew ${}", amount)        
-        
-        
+        print(" withdrew ${}", amount)
+
+
     def __str__(self):
         return "{},{}".format(self.name, self.__customer_number)
 
     __repr__=__str__
-    
-    

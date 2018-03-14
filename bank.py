@@ -79,7 +79,7 @@ class Bank:
             print("{} is currently closed".format(self.__bank_name))
         else:
             print("{} is currently open.".format(self.__bank_name))
-      
+
     def num_of_employees(self):
         return len(Employee.eid_list)
 

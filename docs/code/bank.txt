@@ -1,0 +1,78 @@
+"""
+bank.txt documentation
+
+This module contains the definition for the Bank class. The class emulates a
+real-life bank system, with attributes and functions that store information about
+the account and its holder, as well as withdrawal and deposit functionalities.
+
+Example:
+>>>from bank import Bank
+>>>bank = Bank("Bank of America")
+>>>bank.name
+>>>Bank of America
+"""
+
+
+"""
+Attributes:
+    None
+
+Todo:
+    None
+
+"""
+"""
+class Bank (object):
+    """
+    Implementation of a Bank.
+
+    Attributes:
+        __bank_name (str): the name of the bank.
+
+        __bank_openhours(:obj:`dict` of :obj:`datetime.time`): The open hours of the bank.
+
+        __bank_closehours(:obj:`dict` of :obj:`datetime.time`): The closing hours of the bank.
+
+
+        __employee_count (int): the number of employees of the bank.
+
+        __customer_count (int): the number of customers the bank serves.
+
+        __customer_list (:obj:`dict` of :obj:`datetime.time`): The customers the bank serves.
+
+    """
+
+    def __init__(self, bank_name):
+
+        Args:
+            bank_name: the name of the bank to be passed.
+
+
+    """
+    def timeopen(self, day):
+      Args:
+          day (int): A number from 0-6 inclusive
+          representing day on which the bank is open.
+
+    def hoursopen(self):
+      Args:
+          None
+
+    def change_timeopen(self, day):
+      Args:
+          day (int): A number from 0-6 inclusive
+          representing day on which the bank is open.
+
+
+    def isopen(self):
+      Args:
+          None
+
+    def num_of_employees(self):
+      Args:
+          None
+
+    def employee_details(self):
+      Args:
+          None
+"""
