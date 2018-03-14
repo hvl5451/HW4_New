@@ -1,75 +1,81 @@
 """
-customer.py documentation
+customer.txt documentation
 
-This module contains the definition for the Customer class. The class emulates a
-real-life bank customer, with attributes and functions that store information about
-the customer and its functions.
+This module contains the definition for the Customer class. The class emulates a real-life bank customer, and has attributes and functions that store information about the the customer and their bank accounts, as well as functionality for opening bank accounts, checking balance, and withdrawing and depositing.
+
 Example:
 >>>from customer import Customer
->>>from random import randint
->>>new_cust = Account("John Doe", "01/01/17", "215-215-2152")
->>>new_cust.get_name()
+>>>from checking_account import CheckingAccount
+>>>from savings_account import SavingsAccount
+>>>import random
+>>>import datetime
+>>>new_customer = Customer("John Doe", "11/11/1998", "123456789")
+account number is 1037568309
+>>>new_customer.get_name()
 >>>John Doe
+
+Attributes:
+	None
+Todo:
+	None
+
 """
 """
 class Customer(Person):
-    """
-    Implementation of a bank customer.
-
-    Attributes:
-        _name (str): the holder of the account.
-
-        _created_on(str):String representation of the account's creation date.
-
-        _account_name (str):
-
-        _account_number (int): the unique numerical identifier of the bank account.
-
-        _account_type (str): A string denoting the type of the account
-        (for this implementation, either savings or checking)
-
-        _balance (double): The balance of the bank account.
-
-    """
-
-    def __init__(self, holder, created_on, account_name, account_number, account_type, balance=0.0):
-
-        Args:
-            holder (str): the value to be assigned to _holder
-            created_on (str): the value to be assigned to _created_on
-            account_name(str): the value to be assigned to _account_name
-            balance (double): the value to be assigned to _balance - by default,
-            this value is set to 0.0.
-        """
-
-
-    def get_holder(self):
-      Args:
-          None
-
-    def get_created_on(self):
-      Args:
-          None
-
-    def get_account_name(self):
-      Args:
-          None
-
-
-    def get_account_number(self):
-      Args:
-          None
-
-    def get_account_type(self):
-      Args:
-          None
-
-    def get_balance(self):
-      Args:
-          None
-
-    def update_balance(self, amount):
-      Args:
-          amount (double): the amount to be added/deducted from the account balance;
-          Can take on a positive or a negative value
 """
+Implementation of a bank customer
+Attributes:
+	_customer_number(int): a unique ID number generated randomly
+	__customer_account_list(dict): a dictionary of account numbers as keys each with 
+					account objects as values
+"""
+
+    def __init__(self, name, birthdate, phone_number):
+	Args:
+		name(str): the value to be assigned to _name
+		birthdate(str): the value to be assigned to _birthdate
+		phone_number(str): the value to be assigned to phone_number
+
+def get_name(self):
+	Args:
+		None
+
+def get_phone_number(self):
+	Args:
+		None
+
+def set_name(self, newname):
+	Args:
+		newname(str): the new string that the _name attribute gets set to
+
+def set_phone_number(self, new_phone_number):
+	Args:
+		new_phone_number(str): the new string that the _name attribute gets set to
+
+def create_account(self, account_type):
+	Args:
+		account_type(str): the string that will determine which Account subclass to be 						created and stored in the customer_accounts_list attribute
+
+def check_balance(self, account_number):
+	Args:
+		account_number(int): the randomly generated unique ID for an account; will be 
+				used to look up entries in the customer_accounts_list attribute
+
+def withdraw(self, account_number, amount):
+	Args:
+		account_number(int): the randomly generated unique ID for an account; will be 
+				used to look up entries in the customer_accounts_list attribute
+		amount(float): a float that will be used to subtract from the account balance
+
+def deposit(self, account_number, amount):
+	Args:
+		account_number(int): the randomly generated unique ID for an account; will be 
+				used to look up entries in the customer_accounts_list attribute
+		amount(float): a float that will be used to add to the account balance
+def __str__(self):
+	Args:
+		None
+	
+
+
+
