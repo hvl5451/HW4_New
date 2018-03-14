@@ -1,0 +1,43 @@
+***
+Manager.txt Documentation
+
+This module contains the definition for the Manager class. This class has attributes and functions that stores the information about Manager and gives the access to edit, create and delete customer details. This class in inherited from Employee.
+
+Examples:
+>>>M1=Manager("Bheas", "09/08/1231,"1212123534")
+>>>M1.edit_customer_name(C1, "Fjui")
+>>>M1.edit_phone_no(C1, "912,)
+>>>M1.create_account_for_customer(C2, CheckingAccount)
+>>>M1.remove_customer(C3)
+
+
+Class Manager(Employee)
+
+	Implementation of a Manager
+
+Attributes:
+		None
+
+	Methods:
+		def edit_customer_name(self, c, phone_no):
+			Args: 
+				c: A customer object
+				name: The new name of the customer that should be replaced
+ 
+
+		def edit_phone_no(self, c, phone_no):
+			Args:
+				c: A customer object
+				phone_no: The new phone_no of the customer that must be replaced
+
+		def create_account_for_customer(self, c, account_type):
+			Args:
+				c: A customer object
+				account_type: The type of the account, i.e, savings and checking.
+
+		def remove_account_for_customer(self, c, account_number )
+			Args:
+				c: A customer object
+				account_number: The account_number of the customer that      needs to be removed
+
+
