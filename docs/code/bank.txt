@@ -1,78 +1,86 @@
 """
-bank.py documentation
+bank.txt documentation
 
-This module contains the definition for the Bank class. The class emulates a
-real-life bank system, with attributes and functions that store information about
-the account and its holder, as well as withdrawal and deposit functionalities.
+This module contains the definition for the Customer class. The class emulates a real-life bank , and has attributes and functions that store information about the the customer and their bank accounts, employees, and other things like the name of the bank and hours open. Customers and employees are added to the bank attributes manually.
 
 Example:
->>>from bank import Bank
->>>bank = Bank("Bank of America")
->>>bank.name
->>>Bank of America
-"""
+>>>from employee import Employee
+>>>from customer import Customer 
+>>>import datetime
+>>>new_bank = Bank(“bank name”)
+>>>new_bank.isopen()
+bank name is bank name
 
-
-"""
 Attributes:
-    None
-
+	None
 Todo:
-    None
+	None
 
 """
 """
-class Bank (object):
-    """
-    Implementation of a Bank.
-
-    Attributes:
-        __bank_name (str): the name of the bank.
-
-        __bank_openhours(:obj:`dict` of :obj:`datetime.time`): The open hours of the bank.
-
-        __bank_closehours(:obj:`dict` of :obj:`datetime.time`): The closing hours of the bank.
-
-
-        __employee_count (int): the number of employees of the bank.
-
-        __customer_count (int): the number of customers the bank serves.
-
-        __customer_list (:obj:`dict` of :obj:`datetime.time`): The customers the bank serves.
-
-    """
+class Customer(Person):
+"""
+Implementation of a bank
+Attributes:
+	__bank_name
+	__bank_openhours
+	__bank_closehours
+	__customer_list
+	__employee_list
+"""
 
     def __init__(self, bank_name):
+	Args:
+	bank_name(str): value to be set to bank
 
-        Args:
-            bank_name: the name of the bank to be passed.
+def get_bankname(self):
+	Args:
+		None
 
+def get_customer_list(self):
+	Args:
+		None
 
-    """
-    def timeopen(self, day):
-      Args:
-          day (int): A number from 0-6 inclusive
-          representing day on which the bank is open.
+def get_employee_list(self):
+	Args:
+		None
 
-    def hoursopen(self):
-      Args:
-          None
+def timeopen(self, day):
+	Args:
+		day(int): an int from 1-6 that corresponds to a key in bank_openhours or 
+bank_closehours dictionaries
 
-    def change_timeopen(self, day):
-      Args:
-          day (int): A number from 0-6 inclusive
-          representing day on which the bank is open.
+def get_hoursopen(self):
+	Args:
+		None
 
+def change_timeopen(self, day, timeopen, timeclose):
+	Args:
+		day(int): an int from 1-6 that corresponds to a key in bank_openhours or 
+bank_closehours dictionaries
+		timeopen(datetime.time): a datetime.time object used to replace the value in the 
+						bank_openhours dictionary
+		timeclose(datetime.time): a datetime.time object used to replace the value in the 
+bank_closehours dictionary
 
-    def isopen(self):
-      Args:
-          None
+def add_customer(self, customer_obj):
+	Args:
+		customer_obj(customer): customer object that will be added to the customer_list 
+dictionary
 
-    def num_of_employees(self):
-      Args:
-          None
+def remove_customer(self, customer_obj):
+	Args:
+		customer_obj(customer):customer object that will be removed from the 
+customer_list dictionary
 
-    def employee_details(self):
-      Args:
-          None
-"""
+def add_employee(self, employee_obj):
+	Args:
+		employee_obj(employee): employee object that will be added to the 
+						employee_list dictionary
+def remove_employee(self, employee_obj):
+	Args:
+		employee_obj(employee): employee object that will be added to the 
+						employee_list dictionary
+def isopen(self):
+	Args:
+		None
