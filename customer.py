@@ -33,7 +33,7 @@ class Customer(Person):
         self._customer_number = random.randint(1000000000,10000000000)
         self._customer_account_list = {}
 
-        print("account number is {}".format(self._customer_number))
+        #print("account number is {}".format(self._customer_number))
 
 
 
@@ -64,7 +64,7 @@ class Customer(Person):
 
 
         self._customer_number = random.randint(1000000000,10000000000)
-        self._customer_account_list = {}
+
 
 
     def create_account(self, account_type):
@@ -80,20 +80,22 @@ class Customer(Person):
         returns the account number and prints a message containing the account number
         """
 
-
+        rand_num = random.randint(1000000,10000000)
 
         if account_type.lower() == "checking":
-            new_account = CheckingAccount (self._name, str(datetime.datetime.now()), random.randint(1000000,10000000), account_type, balance=0.0)
+            #new_account = CheckingAccount (self._name, str(datetime.datetime.now()), random.randint(1000000,10000000), account_type, balance=0.0)
+            self._customer_account_list[rand_num] = CheckingAccount (self._name, str(datetime.datetime.now()), rand_num, account_type, balance=0.0)
 
         if account_type.lower() == "savings":
-            new_account = SavingsAccount (self._name, str(datetime.datetime.now()),random.randint(1000000,10000000), account_type, balance=0.0)
-            print ("account # is {}".format(new_account.get_account_number()))
+            #new_account = SavingsAccount (self._name, str(datetime.datetime.now()),random.randint(1000000,10000000), account_type, balance=0.0)
+            self._customer_account_list[rand_num] = SavingsAccount (self._name, str(datetime.datetime.now()), rand_num, account_type, balance=0.0)
+            print ("account # is {}".format(rand_num))
 
-        self._customer_account_list[new_account.get_account_number()] = new_account
 
 
-        print("account number is {}".format(new_account.get_account_number()))
-        return new_account.get_account_number()
+
+        print("account number is {}".format(rand_num))
+        return rand_num
 
 
     def check_balance(self, account_number):

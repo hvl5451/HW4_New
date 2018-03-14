@@ -128,7 +128,7 @@ class Bank:
         method for adding a customer object to the dictionary customer_list
         the key generated is the customer_number attribute of the customer object
         """
-        self.__customer_list["{}".format(customer_obj.get_customer_number()] = customer_obj
+        self.__customer_list["{}".format(customer_obj.get_customer_number())] = customer_obj
 
     def remove_customer(self, customer_obj):
         """
@@ -142,13 +142,13 @@ class Bank:
         method for adding an employee object to the dictionary employee_list
         the key generated is the eid attribute of the employee object
         """
-        self.__employee_list["{}":.format(employee_obj.get_eid())] = employee_obj
+        self.__employee_list["{}".format(employee_obj.get_eid())] = employee_obj
 
     def remove_employee(self, employee_obj):
         """
         deletes the selected employee_obj from the employee_lsit dictionary
         """
-        del self.__employee_list["{}":.format(employee_obj.get_eid())]
+        del self.__employee_list["{}".format(employee_obj.get_eid())]
 
 
     def isopen(self):
