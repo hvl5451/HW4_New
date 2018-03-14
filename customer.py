@@ -21,16 +21,20 @@ class Customer(Person):
     Can create a user_account within the bank system.
     Can request opening or closing an account.
     Can withdraw and deposit money, check balance of the customer's different accounts.
+    Upon creation, the randomly generated customer number will be printed.
 
     """
     
     def __init__(self, name, birthdate, phone_number, \
                  customer_number):
-        
+
+
+        super().__init__(name, birthdate, phone_number)        
         self._customer_number = random.randint(1000000000,10000000000)
         self.__customer_account_list = {}
+
+        print("account number is {}".format(self._customer_number))
         
-        super().__init__(name, birthdate, phone_number)
 
 
 
