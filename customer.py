@@ -17,82 +17,82 @@ import datetime
 class Customer(Person):
 
     """
-
+    
     Implementation of a customer.
     Can create a user_account within the bank system.
-    Can login, logout, and change password.
     Can request opening or closing an account.
     Can withdraw and deposit money, check balance of the customer's different accounts.
 
     """
-
+    
     def __init__(self, name, birthdate, phone_number, \
-                 password = None, customer_number = None):
-
-        self.___password = password
+                 customer_number):
+        
         self._customer_number = random.randint(1000000000,10000000000)
         self.__customer_account_list = {}
-
+        
         super().__init__(name, birthdate, phone_number)
 
-    """
-
-    Login property that can be true and false for each instance of customer depending if
-    they login with their user account number and password. When this property is false,
-    certain methods are disabled
-
-    """
-
-
-    def create_usraccount(self, password, birthdate):
-
-        if birthdate != self._birthdate:
-            raise ValueError("birthdates do not match. Security verification failed")
-
-        else:
-            self.___password = password
-            self._customer_number = random.randint(1000000000,10000000000)
-            print("account number is {}".format(self._customer_number))
-
-
-
-
-    def set_password(self, oldpass, newpass):
-        """setter method for password; changes private attribute password to argument passed to it"""
-        self._password = newpass
 
 
     def get_name(self):
+        """
+        getter method for name
+        returns the protected attribute name
+        """
         return self._name
 
     def get_phone_number(self):
+        """
+        getter method for phone_number
+        returns the protected attribute phone_number
+        """
         return self._phone
 
-    def set_name(self, temppass, newname):
-
+    def set_name(self, newname):
+        """
+        setter method for name
+        changes protected attribute name to argument passed to it
+        """
         self._name = newname
 
 
     def set_phone_number(self, temppass, new_phone_number):
+        """
+        setter method for name
+        changes protected attribute phone number to argument passed to it
+        """
         self._phone_number = new_phone_number
 
 
     def create_account(self, account_type):
+        """
+        method for creating bank account objects
+        constructs instances of the Account subclasses with customer attributes:
+            -customer name
+            -time of method call
+            -a random 7-digit integer
+            -type of account; a method argument, determines which subclass of Account is created
+        
+        returns the account number and prints a message containing the account number
+        """
 
+
+        
         if account_type.lower() == "checking":
             new_account = CheckingAccount (self.___name, str(datetime.datetime.now()), random.randint(1000000,10000000), account_type)
-
+            
         if account_type.lower() == "saving":
             new_account = SavingsAccount (self.___name, str(datetime.datetime.now()), random.randint(1000000,10000000), account_type)
 
-
+            
         self._customer_account_list[new_account.get_account_number()] = new_account
         self._customer_account_list[new_account.get_account_number()] = new_account
 
-
+        
         print("account number is {}".format(new_account.get_account_number()))
         return new_account.get_account_number()
-
+            
 
     def check_balance(self, account_number):
         return self._customer_account_list[account_number].get_balance()
@@ -103,11 +103,13 @@ class Customer(Person):
 
 
     def deposit(self, account_number, amount):
-        self.__customer_account_list[account_number].update_balance(amount)
-        print(" withdrew ${}", amount)
-
-
+        self._customer_account_list[account_number].update_balance(amount)
+        print(" withdrew ${}", amount)        
+        
+        
     def __str__(self):
         return "{},{}".format(self._name, self._customer_number)
 
     __repr__=__str__
+    
+    
