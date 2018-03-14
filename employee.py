@@ -26,7 +26,7 @@ class Employee(Person):
     def get_eid(self):
         """Returns the Employee ID"""
         return self._eid
-    
+
     def display_customer_details(self, c):
         """Displays Customer details like Name, Phone Number, Account number, amd Balance"""
         return "Name:{}".format(c._name)
